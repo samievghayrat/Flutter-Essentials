@@ -1,0 +1,18 @@
+https://yun-seyeong.tistory.com/19
+
+Container(
+              height: 150,
+              width: 150,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                border: Border.all(
+                  color: Colors.black,
+                  style: BorderStyle.solid,
+                  width: 10
+                )
+              ),
+              child: Text('Main'),
+            )
+            
+            
