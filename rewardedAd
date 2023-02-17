@@ -1,0 +1,75 @@
+
+import 'package:ads4/adhelper.dart';
+import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+class RewardedScreen extends StatefulWidget {
+  const RewardedScreen({Key? key}) : super(key: key);
+
+  @override
+  State<RewardedScreen> createState() => RewardedScreenState();
+}
+
+class RewardedScreenState extends State<RewardedScreen> {
+  late RewardedAd _rewardedAd;
+
+  // TODO: Implement _loadRewardedAd()
+  void _loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: AdHelper.rewardedAdUnitId,
+      request: AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              setState(() {
+                // ad.dispose();
+                // _rewardedAd = null;
+              });
+              _loadRewardedAd();
+            },
+          );
+
+          setState(() {
+            _rewardedAd = ad;
+          });
+        },
+        onAdFailedToLoad: (err) {
+          print('Failed to load a rewarded ad: ${err.message}');
+        },
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    _loadRewardedAd();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _rewardedAd.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Rewarded ad'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            _rewardedAd.show(onUserEarnedReward: (_, reward) {
+              print('reward given');
+            });
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
