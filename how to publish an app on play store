@@ -1,0 +1,12 @@
+1. create a launcher icon https://www.appicon.co/ .                                                                                                                    
+2. Change its photo name, and add a new name to the app.                                                                                                                         
+3. [project]/android/key.properties create new file and add 
+4. 
+storePassword=<password from previous step>
+keyPassword=<password from previous step>
+keyAlias=upload
+storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks>
+5.  keytool -genkey -v -keystore C:\Users\99291\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload                                                                                                                                                                      
+6. C:\Users\99291\upload-keystore.jks                                                                                                                                                                
+7. ad it to android/app directory                                                                                                                                                                     
+8. change key.properties file ../app/upload-keystore.jks
