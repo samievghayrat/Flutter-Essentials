@@ -1,0 +1,107 @@
+import 'package:flutter/material.dart';
+
+import 'colors.dart';
+import 'constants.dart';
+
+ThemeData deeDeeTheme = ThemeData(
+  fontFamily: 'Roboto',
+  scaffoldBackgroundColor: Colors.white,
+  appBarTheme: const AppBarTheme(
+    color: Colors.white,
+    iconTheme: IconThemeData(
+      color: Colors.black,
+    ),
+    centerTitle: true,
+    titleTextStyle: TextStyle(
+      color: mainTextColor,
+      fontSize: 22,
+      fontWeight: FontWeight.w400,
+    ),
+    elevation: 1,
+  ),
+  textTheme: const TextTheme(
+    displayLarge: TextStyle(
+      fontSize: 16,
+      color: mainTextColor,
+      fontWeight: FontWeight.w500,
+    ),
+    //text style for DrawerHeader
+    displayMedium: TextStyle(
+      fontSize: 20,
+      color: Colors.white,
+      overflow: TextOverflow.ellipsis,
+    ),
+    //text style for DrawerHeader
+    titleSmall: TextStyle(
+      fontSize: 16,
+      color: Colors.white,
+    ),
+    displaySmall: TextStyle(
+      fontSize: 16,
+      color: Colors.white,
+      overflow: TextOverflow.ellipsis,
+    ),
+    headlineMedium: TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: secondaryTextColor,
+    ),
+    headlineLarge: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: mainTextColor,
+    ),
+  ),
+  snackBarTheme:
+      const SnackBarThemeData(contentTextStyle: TextStyle(color: Colors.white)),
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+    primary: const Color(COLOR_PRIMARY),
+    secondary: const Color(COLOR_PRIMARY),
+    onPrimary: Colors.white,
+    onSurface: const Color(COLOR_PRIMARY).withOpacity(0.6),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      foregroundColor: const Color(COLOR_PRIMARY),
+    ),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all<Color>(
+        const Color(COLOR_PRIMARY),
+      ),
+      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+        const EdgeInsets.symmetric(
+          vertical: 12,
+          horizontal: 12,
+        ),
+      ),
+      shape: MaterialStateProperty.all<OutlinedBorder>(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+      ),
+      textStyle: MaterialStateProperty.all<TextStyle>(
+        const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+    ),
+  ),
+  sliderTheme: SliderThemeData(
+    thumbColor: const Color(COLOR_PRIMARY),
+    thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 15),
+    trackHeight: 10,
+    activeTrackColor: const Color(COLOR_PRIMARY).withOpacity(0.8),
+    inactiveTrackColor: const Color(COLOR_PRIMARY).withOpacity(0.4),
+    inactiveTickMarkColor: Colors.black,
+    valueIndicatorColor: const Color(COLOR_PRIMARY),
+    valueIndicatorTextStyle: const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+  ),
+);
