@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+
+ Scrollbar(
+                thumbVisibility: true,
+                child: ListView.builder(
+                    primary: true,
+                    itemCount: 100,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                          height: 50,
+                          color: index.isEven
+                              ? Colors.amberAccent
+                              : Colors.blueAccent,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Scrollable 2 : Index $index'),
+                          ));
+                    }),
+              )
