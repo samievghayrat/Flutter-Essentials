@@ -12,3 +12,6 @@ storeFile=<location of the key store file, such as /Users/<user name>/upload-key
 8. change key.properties file ../app/upload-keystore.jks
 9. change com.google.blablabla in ManifestXml file and build.gradle (applicationId) file 
 10. Use this link to make a privacy and policy https://app.flycricket.com/documents/policies/manage
+
+11. change the image size in here https://convert-my-image.com/ImageConverter
+for chrome height 1080, and width 1920 works
