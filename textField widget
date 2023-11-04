@@ -1,0 +1,51 @@
+
+Widget buildTextField() {
+  return Container(
+    width: 325.w,
+    height: 50.h,
+    decoration: BoxDecoration(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.all(
+        Radius.circular(15.w),
+      ),
+      border: Border.all(color: Colors.black),
+    ),
+    child: Row(
+      children: [
+        Container(
+          width: 16.w,
+          margin: EdgeInsets.only(left: 17.w),
+          height: 16.w,
+          child: Image.asset("assets/icons/user.png"),
+        ),
+        SizedBox(
+          width: 270.w,
+          height: 50.h,
+          child: TextField(
+            keyboardType: TextInputType.multiline,
+            decoration: InputDecoration(
+                hintText: "Enter your email address",
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5))),
+            style: TextStyle(
+                color: Colors.black,
+                fontFamily: "Avenir",
+                fontWeight: FontWeight.normal,
+                fontSize: 12.sp),
+          ),
+        ),
+      ],
+    ),
+  );
+}
